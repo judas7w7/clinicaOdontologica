@@ -25,7 +25,7 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="nombreusuario" type="text" placeholder="Digite el nombre de usuario" name="nombreusuario" required />
+                                                        <input class="form-control" id="nombreusuario" type="text" style="text-transform: lowercase;" placeholder="Digite el nombre de usuario" name="nombreusuario" required />
                                                         <label for="nombreusuario">Nombre Usuario</label>
                                                     </div>
                                                 </div>

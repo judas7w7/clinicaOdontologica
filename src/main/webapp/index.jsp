@@ -1,6 +1,6 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="logica.Turno"%>
 <%@page import="java.util.List"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
     <%@include file="layout/header.jsp"%>
@@ -10,7 +10,7 @@
         <%@include file="layout/validarSesion.jsp"%>
         <!-- Fin Validacion Sesion -->
 
-        <%@include file="layout/navbar.jsp"%>
+        <%//@include file="layout/navbar.jsp"%> 
         <div id="layoutSidenav">
             <%@include file="layout/layoutSidenav_nav.jsp"%>
             <div id="layoutSidenav_content">
@@ -38,18 +38,9 @@
                                             <th>Paciente</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Fecha</th>
-                                            <th>Hora</th>
-                                            <th>Tratamiento</th>
-                                            <th>Odontólogo</th>
-                                            <th>Paciente</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
-                                        <%                                            List<Turno> listaTurno = (List) request.getSession().getAttribute("listaTurno");
+                                        <% 
+                                            List<Turno> listaTurno = (List) request.getSession().getAttribute("listaTurno");
                                             if (listaTurno != null) {
                                                 for (Turno tur : listaTurno) {%>
                                         <tr>
