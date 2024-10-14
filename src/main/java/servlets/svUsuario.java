@@ -46,7 +46,7 @@ public class svUsuario extends HttpServlet {
         boolean error = true;
         boolean validacion = false;
         HttpSession misession = request.getSession(true);
-        validacion = control.comprobarExistencia(nombreUsuario);
+        validacion = control.comprobarExistencia(nombreUsuario, rol);
 
         if (nombreUsuario.endsWith(" ")) {
             String mensaje = "El nombre de usuario contiene espacios al final";
