@@ -49,8 +49,7 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <%                                        
-                                            List<Turno> listaTurno = (List) request.getSession().getAttribute("listaTurno");
+                                        <%                                            List<Turno> listaTurno = (List) request.getSession().getAttribute("listaTurno");
                                             if (listaTurno != null) {
                                                 for (Turno tur : listaTurno) {%>
                                         <tr>

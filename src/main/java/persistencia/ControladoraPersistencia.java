@@ -104,7 +104,7 @@ public class ControladoraPersistencia {
 
     public List<Turno> listarTurnosActuales(String fActual) {
         EntityManager em = turnJPA.getEntityManager();
-        Query query = em.createQuery("SELECT t FROM Turno t WHERE t. fecha > : fHoy ORDER BY t.id_turno");
+        Query query = em.createQuery("SELECT t FROM Turno t WHERE t.fecha > :fHoy ORDER BY t.id_turno");
         query.setParameter("fHoy", fActual);
         List<Turno> lista = query.getResultList();
         return lista;
