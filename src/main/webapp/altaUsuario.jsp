@@ -48,7 +48,7 @@
                                     <div class="row mb-3">
                                         <div class="col-md-3">
                                             <div class="mt-4 mb-0">
-                                                <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Crear Usuario></button></div>
+                                                <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Crear Usuario</button></div>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
