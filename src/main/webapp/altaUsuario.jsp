@@ -63,9 +63,9 @@
                     </div>
                 </main>
                 <!-- FIN MAIN -->
-                <%@include file="layout/footer. jsp"%>
+                
             </div>
         </div>
-        <%@include file="layout/script.jsp"%>
+        
     </body>
 </html>

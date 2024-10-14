@@ -43,7 +43,7 @@ public class svUsuario extends HttpServlet {
 
         control.crearUsuario(nombreUsuario, contrasenia, rol);
 
-        response.sendRedirect("svUsuario") ;
+        response.sendRedirect("login.jsp") ;
     }
 
     @Override

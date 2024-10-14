@@ -19,6 +19,10 @@ public class Controladora {
         controlPersis.crearUsuario(usu);
     }
 
+//    public boolean existeUsuario(String nombreUsuario, String rol) {
+//        return svUsuario.existeUsuario(nombreUsuario, rol);
+//    }
+
     public List<Usuario> getUsuarios() {
         return controlPersis.getUsuarios();
 

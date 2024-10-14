@@ -41,7 +41,6 @@ public class svLogin extends HttpServlet {
             throws ServletException, IOException {
         String usuario = request.getParameter("usuario");
         String contrasenia = request.getParameter("contrasenia");
-//        String rol = request.getParameter("rol");
         boolean error = true;
         boolean validacion = false;
         HttpSession misession = request.getSession(true);
@@ -50,12 +49,9 @@ public class svLogin extends HttpServlet {
         if (validacion) {
             error = false;
             misession.setAttribute("usuario", usuario);//Asigno el nombre del usuario actual
-
             List<Turno> listaTurnosActuales = new ArrayList<Turno>();
-//Fechas
             LocalDate fechaActual = LocalDate.now();
             String fActual = fechaActual.toString();
-//listaTurnosActuales = control.listarTurnosGeneral (); General
             listaTurnosActuales = control.listarTurnosActuales(fActual);
             misession.setAttribute("listaTurno", listaTurnosActuales);//Asigno el listado de turnos
 
