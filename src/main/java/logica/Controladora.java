@@ -56,6 +56,18 @@ public class Controladora {
         }
         return false;
     }
+    
+        public boolean comprobarExistencia(String usuario) {
+
+        List<Usuario> listaUsuario = new ArrayList<Usuario>();
+        listaUsuario = controlPersis.getUsuarios();
+        for (Usuario usu : listaUsuario) {
+            if (usu.getNombre_usuario().equals(usuario)) {
+                 return true;
+            }
+        }
+        return false;
+    }
 
     public List<Horario> getHorarios() {
         return controlPersis.getHorarios();

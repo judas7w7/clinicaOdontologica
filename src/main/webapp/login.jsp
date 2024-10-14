@@ -38,7 +38,7 @@
                                         <form action="svLogin" method="POST">
                                             <!-- Campo para el nombre de usuario -->
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="usuario" name="usuario" type="text" placeholder="nombre@ejemplo.com" />
+                                                <input class="form-control" id="usuario" name="usuario" type="text" style="text-transform: lowercase;" placeholder="nombre@ejemplo.com" />
                                                 <label for="usuario">Nombre de usuario</label>
                                             </div>
 
