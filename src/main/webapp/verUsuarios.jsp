@@ -37,19 +37,11 @@
                                             <th width="10%">Acciones</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Nombre de usuario</th>
-                                            <th>Rol</th>
-                                            <th>Acciones</th>
-                                        </tr>
-                                    </tfoot>
-                                    <%
-                                        List<Usuario> ListaUsuario = (List) request.getSession().getAttribute("listaUsuarios");
+                                                                        <%
+                                        List<Usuario> listaUsuario = (List) request.getSession().getAttribute("listaUsuarios");
                                     %>
                                     <tbody>
-                                        <% for (Usuario usu : listaUsuarios) {%>
+                                        <% for (Usuario usu : listaUsuario) {%>
                                         <tr>
                                             <td><%=usu.getId_usuario()%></td>
                                             <td><%=usu.getNombre_usuario()%></td>
@@ -71,6 +63,14 @@
                                         </tr>
                                         <%}%>
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Nombre de usuario</th>
+                                            <th>Rol</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
                         </div>

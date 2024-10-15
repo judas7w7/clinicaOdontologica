@@ -1,0 +1,34 @@
+# Archivos de configuración de NetBeans
+nbproject/private/
+build/
+dist/
+
+# Archivos generados
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de dependencias
+lib/
+
+# Archivos de entorno
+*.properties
+
+# Archivos de usuario
+*.user
+*.iml
+
+# Archivos de IDE
+.idea/
+*.sublime-workspace

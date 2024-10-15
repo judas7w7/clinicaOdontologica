@@ -28,7 +28,6 @@ public class svEditUsuario extends HttpServlet {
         Usuario usu = control.traerUsuario(id);
         HttpSession misession = request.getSession();
         misession.setAttribute("usuEditar", usu);
-
         response.sendRedirect("editarUsuario.jsp");
         //System.out.println("El usuario es: "+ usu.getNombre_usuario() );
     }
