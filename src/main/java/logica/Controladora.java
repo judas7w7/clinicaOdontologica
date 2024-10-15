@@ -22,7 +22,6 @@ public class Controladora {
 //    public boolean existeUsuario(String nombreUsuario, String rol) {
 //        return svUsuario.existeUsuario(nombreUsuario, rol);
 //    }
-
     public List<Usuario> getUsuarios() {
         return controlPersis.getUsuarios();
 
@@ -50,6 +49,20 @@ public class Controladora {
         for (Usuario usu : listaUsuario) {
             if (usu.getNombre_usuario().equals(usuario)) {
                 if (usu.getContrasenia().equals(contrasenia)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean comprobarExistencia(String usuario, String rol) {
+
+        List<Usuario> listaUsuario = new ArrayList<Usuario>();
+        listaUsuario = controlPersis.getUsuarios();
+        for (Usuario usu : listaUsuario) {
+            if (usu.getNombre_usuario().equals(usuario)) {
+                if (usu.getRol().equals(rol)) {
                     return true;
                 }
             }

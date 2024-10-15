@@ -4,7 +4,7 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.jsp">
                     <div class="sb-nav-link-icon"><i class="fas fa-solid fa-compass"></i></div>
                     Menú
                 </a>
@@ -27,7 +27,7 @@
                 </a>
                 <div class="collapse" id="collapseResponsables" aria-labelledby="headingResponsables" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Ver Responsables</a>
+                        <a class="nav-link" href="svResponsable">Ver Responsables</a>
                         <a class="nav-link" href="altaResponsable.jsp">Alta Responsables</a>
                     </nav>
                 </div>
