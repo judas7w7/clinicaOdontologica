@@ -24,9 +24,11 @@ public class svEditarResponsable extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-         String id = request.getParameter("id");
+        Integer id = Integer.valueOf(request.getParameter("id"));
         HttpSession session = request.getSession();
-        session.setAttribute("id", id);
+        Responsable responsable = controladoraPersistencia.buscarResponsable(id);
+        System.out.println("Fecha nacimiento: " + responsable.getFecha_nac());
+        session.setAttribute("responsableEditar", responsable);
         response.sendRedirect("editarResponsable.jsp");
     }
 
@@ -34,7 +36,7 @@ public class svEditarResponsable extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        String id =(String) request.getSession().getAttribute("id");
+        Integer id =(Integer) request.getSession().getAttribute("id");
         String dni= request.getParameter("dni"), 
                nombre = request.getParameter("nombre"),
                apellido = request.getParameter("apellido"),
@@ -50,7 +52,7 @@ public class svEditarResponsable extends HttpServlet {
                     
             }*/
             for(Responsable responsable: responsables){
-                if(responsable.getId() == Integer.parseInt(id)){
+                if(responsable.getId() == id){
                     Responsable responsableActualizar = new Responsable(
                             tipoResponsable, responsable.getId(), dni, nombre,
                             apellido, telefono, direccion, fecha);

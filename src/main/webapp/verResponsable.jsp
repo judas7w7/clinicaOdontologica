@@ -60,7 +60,7 @@
                                                     </button>
                                                     <input type="hidden" name="id" value="<%=res.getId()%>">
                                                 </form>
-                                                <form name="editar" action="svEditTurno" method="GET" style="float: left; margin-right: 10px;">
+                                                <form name="editar" action="svEditarResponsable" method="GET" style="float: left; margin-right: 10px;">
                                                     <button class="btn btn-outline-primary btn-block" title="Editar registro">
                                                         <i class="fas fa-edit"></i>
                                                     </button>
