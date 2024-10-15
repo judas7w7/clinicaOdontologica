@@ -109,4 +109,24 @@ public class ControladoraPersistencia {
         List<Turno> lista = query.getResultList();
         return lista;
     }
+
+    public Responsable buscarResponsable(int id) {
+        return respJPA.findResponsable(id);
+    }
+
+    public void borrarResponsable(Integer id) {
+        try {
+            respJPA.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void editarResponsable(Responsable responsable) {
+        try {
+            respJPA.edit(responsable);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
