@@ -2,8 +2,6 @@ package logica;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import persistencia.ControladoraPersistencia;
 
 public class Controladora {
@@ -59,15 +57,21 @@ public class Controladora {
     public boolean comprobarExistencia(String usuario, String rol) {
 
         List<Usuario> listaUsuario = new ArrayList<Usuario>();
-        listaUsuario = controlPersis.getUsuarios();
-        for (Usuario usu : listaUsuario) {
-            if (usu.getNombre_usuario().equals(usuario)) {
-                if (usu.getRol().equals(rol)) {
-                    return true;
+        try{
+            listaUsuario = controlPersis.getUsuarios();
+
+            for (Usuario usu : listaUsuario) {
+                if (usu.getNombre_usuario().equals(usuario)) {
+                    if (usu.getRol().equals(rol)) {
+                        return true;
+                    }
                 }
             }
+        }catch(NullPointerException e){
+            return false;     
+        }finally{
+            return false;
         }
-        return false;
     }
 
     public List<Horario> getHorarios() {
@@ -129,6 +133,26 @@ public class Controladora {
 
     public List<Turno> listarTurnosActuales(String fActual) {
         return controlPersis.listarTurnosActuales(fActual);
+    }
+
+    public void borrarPaciente(Integer id) {
+        controlPersis.borrarPaciente(id);
+    }
+
+    public Paciente buscarPaciente(Integer id) {
+       return controlPersis.buscarPaciente(id);
+    }
+
+    public Responsable buscarResponsable(int id) {
+        return controlPersis.buscarResponsable(id);
+    }
+
+    public void crearPciente(Paciente pacienteActualizar) {
+        controlPersis.crearPaciente(pacienteActualizar);
+    }
+
+    public void editarPaciente(Paciente pacienteActualizar) {
+        controlPersis.editarPaciente(pacienteActualizar);
     }
 
 }

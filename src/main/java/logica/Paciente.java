@@ -20,16 +20,31 @@ public class Paciente extends Persona implements Serializable {
     @OneToMany (mappedBy="pacien")
     private List<Turno>listaTurnos;
 
-    public Paciente() {
-    }
-
-    public Paciente(boolean eps, String tipo_sangre, Responsable unResponsable, List<Turno> listaTurnos, int id, String dnhi, String nombre, String apellidos, String telefono, String direccion, String fecha_nac) {
+    /*public Paciente(int id, boolean eps, String tipo_sangre, Responsable unResponsable, List<Turno> listaTurnos, String dnhi, String nombre, String apellidos, String telefono, String direccion, String fecha_nac) {
         super(id, dnhi, nombre, apellidos, telefono, direccion, fecha_nac);
         this.eps = eps;
         this.tipo_sangre = tipo_sangre;
         this.unResponsable = unResponsable;
         this.listaTurnos = listaTurnos;
+    }*/
+
+    public Paciente(int id, boolean eps, String tipo_sangre, Responsable unResponsable, String dnhi, String nombre, String apellidos, String telefono, String direccion, String fecha_nac) {
+        super(id, dnhi, nombre, apellidos, telefono, direccion, fecha_nac);
+        this.eps = eps;
+        this.tipo_sangre = tipo_sangre;
+        this.unResponsable = unResponsable;
     }
+        
+    public Paciente(boolean eps, String tipo_sangre, Responsable unResponsable, String dni, String nombre, String apellidos, String telefono, String direccion, String fecha_nac) {
+        super(dni, nombre, apellidos, telefono, direccion, fecha_nac);
+        this.eps = eps;
+        this.tipo_sangre = tipo_sangre;
+        this.unResponsable = unResponsable;
+    }
+
+    public Paciente() {
+    }
+    
 
     public boolean isEps() {
         return eps;

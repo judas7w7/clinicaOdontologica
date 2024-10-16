@@ -17,7 +17,7 @@
                 <div class="collapse" id="collapsePacientes" aria-labelledby="headingPacientes" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="svPaciente">Ver Pacientes</a>
-                        <a class="nav-link" href="altaPaciente.jsp">Alta Pacientes</a>
+                        <a class="nav-link" href="svResponsablePaciente">Alta Pacientes</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseResponsables" aria-expanded="false" aria-controls="collapseResponsables">

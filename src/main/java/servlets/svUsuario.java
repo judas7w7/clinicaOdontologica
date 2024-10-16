@@ -47,7 +47,6 @@ public class svUsuario extends HttpServlet {
         boolean validacion = false;
         HttpSession misession = request.getSession(true);
         validacion = control.comprobarExistencia(nombreUsuario, rol);
-
         if (nombreUsuario.endsWith(" ")) {
             String mensaje = "El nombre de usuario contiene espacios al final";
             response.setContentType("text/html");
@@ -64,6 +63,9 @@ public class svUsuario extends HttpServlet {
                 response.sendRedirect("login.jsp");
             }
         }
+        
+
+        
     }
 
     @Override
