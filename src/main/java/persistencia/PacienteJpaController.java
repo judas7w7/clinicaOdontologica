@@ -69,7 +69,7 @@ public class PacienteJpaController implements Serializable {
             em = getEntityManager();
             em.getTransaction().begin();
             Paciente persistentPaciente = em.find(Paciente.class, paciente.getId());
-            List<Turno> listaTurnosOld = persistentPaciente.getListaTurnos();
+            /*List<Turno> listaTurnosOld = persistentPaciente.getListaTurnos();
             List<Turno> listaTurnosNew = paciente.getListaTurnos();
             List<Turno> attachedListaTurnosNew = new ArrayList<Turno>();
             for (Turno listaTurnosNewTurnoToAttach : listaTurnosNew) {
@@ -78,7 +78,6 @@ public class PacienteJpaController implements Serializable {
             }
             listaTurnosNew = attachedListaTurnosNew;
             paciente.setListaTurnos(listaTurnosNew);
-            paciente = em.merge(paciente);
             for (Turno listaTurnosOldTurno : listaTurnosOld) {
                 if (!listaTurnosNew.contains(listaTurnosOldTurno)) {
                     listaTurnosOldTurno.setPacien(null);
@@ -95,7 +94,8 @@ public class PacienteJpaController implements Serializable {
                         oldPacienOfListaTurnosNewTurno = em.merge(oldPacienOfListaTurnosNewTurno);
                     }
                 }
-            }
+            }*/
+            paciente = em.merge(paciente);
             em.getTransaction().commit();
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();

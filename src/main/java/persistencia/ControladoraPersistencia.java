@@ -129,4 +129,32 @@ public class ControladoraPersistencia {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public void crearPaciente(Paciente paciente) {
+        pacJPA.create(paciente);
+    }
+
+    public List<Paciente> buscarPaciente() {
+        return pacJPA.findPacienteEntities();
+    }
+
+    public void borrarPaciente(Integer id) {
+        try {
+            pacJPA.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public Paciente buscarPaciente(Integer id) {
+        return pacJPA.findPaciente(id);
+    }
+
+    public void editarPaciente(Paciente pacienteActualizar) {
+        try {
+            pacJPA.edit(pacienteActualizar);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
